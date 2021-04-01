@@ -2,12 +2,15 @@ package com.in28minutes.business;
 
 import com.in28minutes.data.api.TodoBusinessImpl;
 import com.in28minutes.data.api.TodoService;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.Arrays;
@@ -20,8 +23,11 @@ import static org.mockito.BDDMockito.then;
 import static org.mockito.Mockito.*;
 
 
-@RunWith(MockitoJUnitRunner.class)
 public class TodoBusinessImplInjectMockTest {
+
+    @Rule
+    public MockitoRule mockitoRule = MockitoJUnit.rule();
+
 
     @Mock
     TodoService todoServiceMock;
